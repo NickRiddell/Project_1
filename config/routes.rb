@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
-  root to: "home#index"
+  get 'user/index'
+
+  get 'booking/index'
+
+  get 'performer/index'
+
+  get 'venue/index'
+
+  get 'show/index'
+
+  root to: "shows#index"
   resources :shows
   resources :performers
   resources :venues
