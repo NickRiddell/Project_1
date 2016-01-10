@@ -7,9 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+
+<header>
+  <nav>
+    <div class="go-left">
+    <div class="logo">
+      <%= link_to('Shows', shows_path) %>
+    </div>
+    </div>
+    <div class="go-right">
+      <ul>
+      <li><%= link_to('Bookings', bookings_path) %></li>      
+      <li><%= link_to('Performers', performers_path) %></li>      
+      <li><%= link_to('Venues', venues_path) %></li>
+      </ul>
+  </nav>
+</header>
 
 <%= yield %>
 

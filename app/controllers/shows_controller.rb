@@ -10,8 +10,8 @@ class ShowsController < ApplicationController
 
   def create
     Show.create(show_params)
-    venue = Venue.find(params["show"] ["venue_id"].to_i)
-    venue.shows << show
+    @venue = Venue.find(params["show"] ["venue_id"].to_i)
+    @venue.shows << @show
     redirect_to(shows_path)
   end
 
@@ -26,8 +26,8 @@ class ShowsController < ApplicationController
 
   def update
     load_show
-    venue = Venue.find(params["show"] ["venue_id"].to_i)
-    venue.shows << show
+    @venue = Venue.find(params["show"] ["venue_id"].to_i)
+    @venue.shows << @show
     @show.update(show_params)
     redirect_to(shows_path)
   end  
