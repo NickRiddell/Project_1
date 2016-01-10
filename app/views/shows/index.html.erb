@@ -1,2 +1,4 @@
-<h1>Show#index</h1>
-<p>Find me in app/views/show/index.html.erb</p>
+<% @shows.each do |show| %>
+<%= link_to("#{show.name}", show_path(show)) %>
+<% end %>
+<%=button_to('New Show', new_show_path, method: :get)%>

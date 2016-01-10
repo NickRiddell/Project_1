@@ -1,0 +1,22 @@
+<%= form_for @venue do |f| %>
+
+<div>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :image %>
+  <%= f.text_field :image%>
+</div>
+<div>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</div>
+<div>
+  <%= f.label :location %>
+  <%= f.text_field :location%>
+</div>
+<div>
+  <%= f.submit %>
+</div>
+<% end %>

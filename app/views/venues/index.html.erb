@@ -1,2 +1,4 @@
-<h1>Venue#index</h1>
-<p>Find me in app/views/venue/index.html.erb</p>
+<% @venues.each do |venue| %>
+<%= link_to("#{venue.name}", venue_path(venue)) %>
+<% end %>
+<%=button_to('New Venue', new_venue_path, method: :get)%>

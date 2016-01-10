@@ -1,0 +1,18 @@
+<div>
+  <% if @show.venue %>
+    <h1 class="title"><%= @show.name %></h1>
+</div>
+<div>
+  <%= image_tag(@show.image, alt:"No image") %>
+</div>
+<div>
+  <%= @show.venue.name%>
+    <% else %>
+  <p>no venue</p>
+    <% end %>
+</div>
+<div>
+  <%= @show.description %>
+</div>
+<%= button_to('Edit Show', edit_show_path(@show), method: :get) %>
+<%= button_to("Delete #{@show.name} ?", show_path(@show), method: :delete, data: {confirm: 'Delete show? Are you sure?!'}) %>
