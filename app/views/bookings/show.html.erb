@@ -1,0 +1,15 @@
+<h1><%= @booking.id %></h1>
+<div>
+  <p><%= @booking.user.name %></p>
+  <br>
+  <p><%= @booking.show.name %></p>
+
+</div>
+
+<br><br>
+<% if can? :create, Booking %> 
+<div>
+<%= button_to('Edit Booking', edit_booking_path(@booking), method: :get) %>
+<%= button_to("Delete #{@booking.name} ?", booking_path(@booking), method: :delete, data: {confirm: 'Delete booking? Are you sure?!'}) %>
+<% end %>
+</div>

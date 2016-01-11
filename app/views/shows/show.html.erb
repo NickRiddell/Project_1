@@ -17,5 +17,10 @@
 <div>
 <%= @show.performer.name %>
 </div>
+<br><br>
+<% if can? :create, Show %> 
+<div>
 <%= button_to('Edit Show', edit_show_path(@show), method: :get) %>
 <%= button_to("Delete #{@show.name} ?", show_path(@show), method: :delete, data: {confirm: 'Delete show? Are you sure?!'}) %>
+<% end %>
+</div>

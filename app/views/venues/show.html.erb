@@ -7,5 +7,10 @@
 <div>
   <%= @venue.description %>
 </div>
+<br><br>
+<% if can? :create, Venue %> 
+<div>
 <%= button_to('Edit Venue', edit_venue_path(@venue), method: :get) %>
 <%= button_to("Delete #{@venue.name} ?", venue_path(@venue), method: :delete, data: {confirm: 'Delete venue? Are you sure?!'}) %>
+<% end %>
+</div>

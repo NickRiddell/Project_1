@@ -1,4 +1,6 @@
 class PerformersController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @performers = Performer.all
   end

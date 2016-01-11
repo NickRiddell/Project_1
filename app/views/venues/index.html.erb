@@ -1,4 +1,9 @@
 <% @venues.each do |venue| %>
 <%= link_to("#{venue.name}", venue_path(venue)) %>
 <% end %>
+<br><br>
+<% if can? :create, Venue %> 
+<div>
 <%=button_to('New Venue', new_venue_path, method: :get)%>
+</div>
+<% end %>

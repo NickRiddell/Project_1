@@ -1,4 +1,9 @@
 <% @performers.each do |performer| %>
 <%= link_to("#{performer.name}", performer_path(performer)) %>
 <% end %>
+<br><br>
+<% if can? :create, Performer %> 
+<div>
 <%=button_to('New Performer', new_performer_path, method: :get)%>
+</div>
+<% end %>

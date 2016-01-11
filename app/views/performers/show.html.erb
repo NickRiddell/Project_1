@@ -7,5 +7,10 @@
 <div>
   <%= @performer.description %>
 </div>
+<br><br>
+<% if can? :create, Performer %> 
+<div>
 <%= button_to('Edit Performer', edit_performer_path(@performer), method: :get) %>
 <%= button_to("Delete #{@performer.name} ?", performer_path(@performer), method: :delete, data: {confirm: 'Delete performer? Are you sure?!'}) %>
+<% end %>
+</div>

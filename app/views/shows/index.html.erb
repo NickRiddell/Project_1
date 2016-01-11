@@ -1,4 +1,9 @@
 <% @shows.each do |show| %>
 <%= link_to("#{show.name}", show_path(show)) %>
 <% end %>
+<br><br>
+<% if can? :create, Show %> 
+<div>
 <%=button_to('New Show', new_show_path, method: :get)%>
+</div>
+<% end %>
