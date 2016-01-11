@@ -22,6 +22,12 @@
   <p>no performer</p>
     <% end %>
 </div>
+<div>
+  <%= @show.human_readable_start_date %>
+</div>
+<div>
+  <%= @show.human_readable_start_time %> - <%= @show.human_readable_end_time %>
+</div>
 <br><br>
 <% if can? :create, Show %> 
 <div>
