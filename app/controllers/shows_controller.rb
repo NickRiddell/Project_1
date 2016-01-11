@@ -2,7 +2,11 @@ class ShowsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @shows = Show.all
+    if params[:search]
+      @shows = Show.search(params[:search])
+    else
+      @shows = Show.all
+    end
   end
 
   def new
@@ -36,7 +40,7 @@ class ShowsController < ApplicationController
 
   def destroy
     load_show
-    show.destroy
+    @show.destroy
     redirect_to( shows_path )
   end
 

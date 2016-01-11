@@ -1,9 +1,13 @@
 class VenuesController < ApplicationController
  load_and_authorize_resource
 
-  def index
-    @venues = Venue.all
-  end
+ def index
+   if params[:search]
+     @venues = Venue.search(params[:search])
+   else
+     @venues = Venue.all
+   end
+ end
 
   def new
     @venue = Venue.new
@@ -30,7 +34,7 @@ class VenuesController < ApplicationController
 
   def destroy
     load_venue
-    venue.destroy
+    @venue.destroy
     redirect_to( venues_path )
   end
 

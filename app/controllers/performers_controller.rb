@@ -2,7 +2,11 @@ class PerformersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @performers = Performer.all
+    if params[:search]
+      @performers = Performer.search(params[:search])
+    else
+      @performers = Performer.all
+    end
   end
 
   def new
@@ -32,7 +36,7 @@ class PerformersController < ApplicationController
 
   def destroy
     load_performer
-    performer.destroy
+    @performer.destroy
     redirect_to( performers_path )
   end
 
