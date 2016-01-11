@@ -5,6 +5,7 @@ class Show < ActiveRecord::Base
   has_many :users, :through => :bookings
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
+  validates_presence_of :start_time, :end_time
 
   def self.search(query)
     where("name || description like ?", "%#{query}%")
@@ -26,13 +27,13 @@ class Show < ActiveRecord::Base
      end_time.strftime('%H:%M')
    end
 
-   def self.events_at_venue(v_id)
+   def self.shows_at_venue(v_id)
      where(venue_id:v_id)
    end
 
-   def event_overlaps?(venue_id)
-     Event.events_at_venue(venue_id).all? do |event|
-       (event.event_date <= end_time) and (event_date >= event.end_time)  
+   def show_overlaps?(venue_id)
+     Show.shows_at_venue(venue_id).all? do |show|
+       (show.start_time <= end_time) and (start_time >= show.end_time)  
      end
    end
 end

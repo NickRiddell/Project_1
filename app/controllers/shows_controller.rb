@@ -15,7 +15,12 @@ class ShowsController < ApplicationController
   end
 
   def create
-    Show.create(show_params)
+    show = Show.new(show_params)
+        if show.show_overlaps?(show.venue_id)
+          show.save
+        else
+          flash[:alert] = "The venue is already booked for this time slot!"
+        end
     @venue = Venue.find(params["show"] ["venue_id"].to_i)
     @venue.shows << @show
     redirect_to(shows_path)
@@ -34,7 +39,11 @@ class ShowsController < ApplicationController
     load_show
     @venue = Venue.find(params["show"] ["venue_id"].to_i)
     @venue.shows << @show
-    @show.update(show_params)
+      if @show.show_overlaps?(@show.venue_id)
+        @show.update
+      else
+        flash[:alert] = "The venue is already booked for this time slot!"
+      end
     redirect_to(shows_path)
   end  
 
@@ -46,7 +55,7 @@ class ShowsController < ApplicationController
 
   private
   def show_params
-    params.require(:show).permit(:name, :image, :description, :venue_id, :performer_id)
+    params.require(:show).permit(:name, :image, :description, :venue_id, :performer_id, :start_time, :end_time)
   end
 
   def load_show
