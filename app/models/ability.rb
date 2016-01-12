@@ -8,9 +8,10 @@ class Ability
         can :manage, :all
     else
         can :read, [Show, Venue, Performer]
-        can [:create, :read], Booking do |booking|
+        can :read, Booking do |booking|
             booking.user == user
         end
+        can :create, Booking
     end
     # Define abilities for the passed in user here. For example:
     #

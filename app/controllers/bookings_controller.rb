@@ -10,12 +10,13 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    @show = Show.find(params[:show_id])
+    @bookings = Booking.new
   end
 
   def create
-    Booking.create(booking_params.merge(user_id: current_user.id))
-    redirect_to(bookings_path)
+      @booking = current_user.bookings.create(booking_params)
+      redirect_to (bookings_path)
   end
 
   def show
@@ -40,7 +41,7 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.permit(:show_id)
+    params.require(:booking).permit(:show_id, :ticket)
   end
 
   def load_booking

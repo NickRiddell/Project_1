@@ -1,13 +1,14 @@
-<h1><%= @booking.id %></h1>
+<h1><%= @booking.show.name %></h1>
 <div>
   <p><%= @booking.user.name %></p>
   <br>
-  <p><%= @booking.show.try(:name) %></p>
+  <p></p>
+  <%= @booking.ticket %>
 
 </div>
 
 <br><br>
-<% if can? :create, Booking %> 
+<% if can? :manage, :all %> 
 <div>
 <%= button_to('Edit Booking', edit_booking_path(@booking), method: :get) %>
 <%= button_to("Delete?", booking_path(@booking), method: :delete, data: {confirm: 'Delete booking? Are you sure?!'}) %>

@@ -4,9 +4,3 @@
   <%= link_to("#{booking.id}", booking_path(booking)) %>
   <br>
 <% end %>
-<br><br>
-<% if can? :create, Show %> 
-<div>
-<%=button_to('New Show', new_show_path, method: :get)%>
-</div>
-<% end %>

@@ -32,7 +32,7 @@
   <%= @show.capacity %>
 </div>
 
-<%= button_to("Book ticket", show_bookings_path(@show), method: :post)%>
+<%= button_to('Book Show', new_show_booking_path(@show), method: :get) %>
 
 <br><br>
 <% if can? :create, Show %> 

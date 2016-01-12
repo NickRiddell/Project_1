@@ -6,7 +6,6 @@ class Show < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
   validates_presence_of :start_time, :end_time
-  validates :capacity, numericality: true
 
   def self.search(query)
     where("name || description || start_time || end_time like ?", "%#{query}%")
@@ -34,7 +33,7 @@ class Show < ActiveRecord::Base
 
    def available_timeslot?(venue_id)
      Show.venue_schedule(venue_id).all? do |show|
-       (show.start_time <= end_time) and (start_time >= show.end_time)  
+       (show.start_time <= end_time) and (start_time >= show.end_time) 
      end
    end
 end

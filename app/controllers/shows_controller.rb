@@ -21,7 +21,7 @@ class ShowsController < ApplicationController
         else
           flash[:alert] = "The venue is already booked for this time slot!"
         end
-    @venue = Venue.find(params["show"] ["venue_id"].to_i)
+    @venue = Venue.find(params["show"]["venue_id"].to_i)
     concatenate_show
     redirect_to(shows_path)
   end
@@ -37,8 +37,9 @@ class ShowsController < ApplicationController
 
   def update
     load_show
-    @venue = Venue.find(params["show"] ["venue_id"].to_i)
+    @venue = Venue.find(params["show"]["venue_id"].to_i)
     concatenate_show
+    update_but_for_time
       if @show.available_timeslot?(@show.venue_id)
         @show.update
       else
@@ -64,5 +65,14 @@ class ShowsController < ApplicationController
 
   def concatenate_show
     @venue.shows << @show
+  end
+
+  def update_but_for_time
+    @show.update(name: show_params[:name])
+    @show.update(image: show_params[:image])
+    @show.update(description: show_params[:description])
+    @show.update(venue_id: show_params[:venue_id])
+    @show.update(performer_id: show_params[:performer_id])
+    @show.update(capacity: show_params[:capacity])
   end
 end

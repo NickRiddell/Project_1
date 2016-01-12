@@ -21,6 +21,7 @@
   <%= f.select :venue_id, Venue.all.map {|v| [v.name, v.id] } %>
 </div>
 <div>
+<%= "Caution, once set, the start and end time cannot be updated!"%>
 <%= f.label :start_time %>
 <%= f.datetime_select :start_time %>
 </div>
