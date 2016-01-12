@@ -44,9 +44,13 @@ class Show < ActiveRecord::Base
      where(venue_id:v_id)
    end
 
-   def available_timeslot?(venue_id)
+   def overlaps?(venue_id)
      Show.venue_schedule(venue_id).all? do |show|
-       (show.start_time overlaps? end_time) and (start_time overlaps? show.end_time) 
+      (start_time - show.end_time) * (show.start_time - end_time) >= 0
      end
    end
 end
+
+  # Return a scope for all interval overlapping the given interval, including the given interval itself
+
+
