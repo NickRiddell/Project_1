@@ -1,7 +1,7 @@
 class Show < ActiveRecord::Base
   belongs_to :venue
   belongs_to :performer
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :users, :through => :bookings
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
@@ -27,13 +27,26 @@ class Show < ActiveRecord::Base
      end_time.strftime('%H:%M')
    end
 
+   def tickets_sold
+     s = self.bookings.all.map {|b| b.ticket }
+     s.inject{|sum,x| sum + x }
+   end
+
+   def available_spaces
+       self.capacity - tickets_sold 
+   end
+
+   def full?
+       available_spaces <= 0
+   end
+
    def self.venue_schedule(v_id)
      where(venue_id:v_id)
    end
 
    def available_timeslot?(venue_id)
      Show.venue_schedule(venue_id).all? do |show|
-       (show.start_time <= end_time) and (start_time >= show.end_time) 
+       (show.start_time overlaps? end_time) and (start_time overlaps? show.end_time) 
      end
    end
 end
