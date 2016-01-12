@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'show/index'
 
   root to: "shows#index"
-  resources :shows
+  resources :shows do
+    resources :bookings
+  end
   resources :performers
   resources :venues
   resources :bookings

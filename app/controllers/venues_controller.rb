@@ -3,7 +3,7 @@ class VenuesController < ApplicationController
 
  def index
    if params[:search]
-     @venues = Venue.search(params[:search])
+     @venues = Venue.search(params[:search]).order("name ASC")
    else
      @venues = Venue.all
    end
@@ -40,7 +40,7 @@ class VenuesController < ApplicationController
 
   private
   def venue_params
-    params.require(:venue).permit(:name, :description, :image, :location)
+    params.require(:venue).permit(:name, :description, :image, :location, :capacity)
   end
 
   def load_venue

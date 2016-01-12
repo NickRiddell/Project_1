@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111161939) do
+ActiveRecord::Schema.define(version: 20160112115925) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "show_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "ticket"
   end
 
   create_table "performers", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160111161939) do
     t.datetime "updated_at",   null: false
     t.datetime "start_time"
     t.datetime "end_time"
+    t.integer  "capacity"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160111161939) do
     t.string   "location"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "capacity"
   end
 
 end

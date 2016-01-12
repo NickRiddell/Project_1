@@ -3,7 +3,7 @@ class PerformersController < ApplicationController
 
   def index
     if params[:search]
-      @performers = Performer.search(params[:search])
+      @performers = Performer.search(params[:search]).order("name ASC")
     else
       @performers = Performer.all
     end

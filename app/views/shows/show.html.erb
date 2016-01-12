@@ -28,6 +28,12 @@
 <div>
   <%= @show.human_readable_start_time %> - <%= @show.human_readable_end_time %>
 </div>
+<div>
+  <%= @show.capacity %>
+</div>
+
+<%= button_to("Book ticket", show_bookings_path(@show), method: :post)%>
+
 <br><br>
 <% if can? :create, Show %> 
 <div>
