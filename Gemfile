@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'cancancan'
 gem 'better_errors'
 gem 'devise'
+gem 'seed_dump'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

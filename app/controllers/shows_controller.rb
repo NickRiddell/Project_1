@@ -15,11 +15,11 @@ class ShowsController < ApplicationController
   end
 
   def create
-    show = Show.new(show_params)
-        if show.overlaps?!(show.venue_id)
-          show.save
-        else
+      @new_show = Show.new(show_params)
+        if Show.overlaps?(@new_show.venue_id, @new_show)
           flash[:alert] = "The venue is already booked for this time slot!"
+        else
+          @new_show.save
         end
     @venue = Venue.find(params["show"]["venue_id"].to_i)
     concatenate_show
@@ -40,7 +40,7 @@ class ShowsController < ApplicationController
     @venue = Venue.find(params["show"]["venue_id"].to_i)
     concatenate_show
     update_but_for_time
-      if @show.overlaps?!(@show.venue_id)
+      if Show.overlaps?(@show.venue_id, @show)
         @show.update(show_params)
       else
         flash[:alert] = "The venue is already booked for this time slot!"
