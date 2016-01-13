@@ -1,12 +1,18 @@
-<div>
-  <h1 class="title"><%= @performer.name%></h1>
-</div>
-<div>
-  <%= image_tag(@performer.image, alt:"No image") %>
-</div>
-<div>
-  <%= @performer.description %>
-</div>
+<main class="container">
+  <div class="headline">
+    <h1><%= @performer.name%></h1>
+  </div>
+  <section class="row">
+    <div class="grid grid-6">
+     <div>
+      <%= image_tag(@performer.image, alt:"No image") %>
+      </div>
+    </div>
+  <div>
+    <%= @performer.description %>
+  </div>
+</section>
+</main>
 <br><br>
 <% if can? :create, Performer %> 
 <div>
@@ -14,3 +20,4 @@
 <%= button_to("Delete #{@performer.name} ?", performer_path(@performer), method: :delete, data: {confirm: 'Delete performer? Are you sure?!'}) %>
 <% end %>
 </div>
+<br><br>

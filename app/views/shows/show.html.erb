@@ -1,42 +1,50 @@
-<div>
-  <% if @show.venue %>
-    <h1 class="title"><%= @show.name %></h1>
-</div>
-<div>
-  <%= @show.venue.name%>
+<main class="container">
+  <div class="headline">
+    <h1><%= @show.name %></h1>
+  </div>
+  <section class="row">
+  <div class="grid grid-6">
+  <div>
+    <% if @show.venue %>
+      <%= @show.venue.name%>
     <% else %>
-  <p>no venue</p>
+      <p>no venue</p>
     <% end %>
-</div>
-<div>
-  <%= image_tag(@show.image, alt:"No image") %>
-</div>
+  </div>
+  <div>
+    <%= @show.description %>
+  </div>
+  <div>
+    <% if @show.performer %>
+    <%= @show.performer.name%>
+      <% else %>
+    <p>no performer</p>
+      <% end %>
+  </div>
+  <div>
+    <%= @show.human_readable_start_date %>
+  </div>
+  <div>
+    <%= @show.human_readable_start_time %> - <%= @show.human_readable_end_time %>
+  </div>
+  <div>
+    Venue Capacity: <%= @show.capacity %><br>
+    Available Tickets: <%= @show.available_spaces%>
+  </div>
+  <% if @show.full? %>
+    <%="SOLD OUT"%>
+  <% else %>
+  <%= button_to('Book Show', new_show_booking_path(@show), method: :get) %>
+  <% end %>
+  </div>
 
-<div>
-  <%= @show.description %>
-</div>
-<div>
-  <% if @show.performer %>
-  <%= @show.performer.name%>
-    <% else %>
-  <p>no performer</p>
-    <% end %>
-</div>
-<div>
-  <%= @show.human_readable_start_date %>
-</div>
-<div>
-  <%= @show.human_readable_start_time %> - <%= @show.human_readable_end_time %>
-</div>
-<div>
-  Venue Capacity: <%= @show.capacity %><br>
-  Available Tickets: <%= @show.available_spaces%>
-</div>
-<% if @show.full? %>
-  <%="SOLD OUT"%>
-<% else %>
-<%= button_to('Book Show', new_show_booking_path(@show), method: :get) %>
-<% end %>
+  <div class="grid grid-6">
+    <div>
+      <%= image_tag(@show.image, alt:"No image", class: "show-img") %>
+    </div>
+  </div>
+</section>
+</main>
 <br><br>
 <% if can? :create, Show %> 
 <div>
@@ -44,3 +52,4 @@
 <%= button_to("Delete #{@show.name} ?", show_path(@show), method: :delete, data: {confirm: 'Delete show? Are you sure?!'}) %>
 <% end %>
 </div>
+<br><br>

@@ -1,3 +1,150 @@
+/*******************************************
+GENERAL
+********************************************/
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*******************************************
+HEADING
+********************************************/
+header {
+box-shadow: 0 1px 3px rgba(0,0,0,0.13),0 1px 0 rgba(0,0,0,0.19);
+height: 106px;
+}
+
+nav {
+  background-color: rgb(0, 102, 255);
+  height: 106px;
+  line-height: 106px;
+}
+
+.go-left {
+  float: left;
+  height: 106px;
+}
+
+.go-right {
+  float: right;
+}
+
+.logo a img {
+  max-width: 100px;
+  margin: 3px;
+  margin-left: 10px;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.13),0 1px 0 rgba(0,0,0,0.19);
+}
+
+.login {
+  margin-left: 10px;
+}
+
+.search {
+  display: inline-block;
+}
+
+nav ul {
+  padding-left: 0px;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+  text-decoration: none;
+  border-bottom: 2px solid  rgb(0, 102, 255);
+}
+
+
+nav ul li a:hover {
+  border-bottom-color: white;
+}
+
+/* GRID FRAMEWORK */
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.row {
+  display: block;
+  margin: 0 -10px;
+}
+
+.grid {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.grid-1 {
+  width: 8.333333%;
+}
+
+.grid-2 {
+  width: 16.666666%;
+}
+
+.grid-3 {
+  width: 25%;
+}
+
+.grid-4 {
+  width: 33.333333%;
+}
+
+.grid-5 {
+  width: 41.666666%;
+}
+
+.grid-6 {
+  width: 50%;
+}
+
+.grid-7 {
+  width: 58.333333%;
+}
+
+.grid-8 {
+  width: 66.666666%;
+}
+
+.grid-9 {
+  width: 75%;
+}
+
+.grid-10 {
+  width: 83.333333%;
+}
+
+.grid-11 {
+  width: 91.666666%;
+}
+
+.grid-12 {
+  width: 100%;
+}
+
+/*PANEL*/
+.headline{
+  font-size: 33px;
+  margin-left: -14px;
+}
+.show-img{
+  max-width: 400px;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

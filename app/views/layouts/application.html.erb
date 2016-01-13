@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>ComedyFestivalApp</title>
+  <%= stylesheet_link_tag    'normalize', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,14 +11,16 @@
   <nav>
     <div class="go-left">
     <div class="logo">
-      <%= link_to('Shows', shows_path) %>
+      <%= link_to(image_tag("logo.png"), shows_path) %>
     </div>
+
     </div>
+
     <div class="go-right">
-      <ul>
-      <li><%= link_to('Bookings', bookings_path) %></li>      
+      <ul>    
       <li><%= link_to('Performers', performers_path) %></li>      
       <li><%= link_to('Venues', venues_path) %></li>
+      <li><%= link_to('Bookings', bookings_path) %></li>  
       </ul>
     </div>
   </nav>

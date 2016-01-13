@@ -1,12 +1,12 @@
 User.delete_all
 
 User.create!([
-  {email: "jay@email.com", encrypted_password: "$2a$10$2MI2TGQLh0Kx8img3N9XquQqu8jhYCCv8x7OtbbNOWoUXSqybgrA2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 6, current_sign_in_at: "2016-01-12 17:26:38", last_sign_in_at: "2016-01-11 14:17:51", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: "Jay", role: "admin"},
-  {email: "nick@email.com", encrypted_password: "$2a$10$LslPVeWHiPv.55dbSevopey84l2AHCbphSGirpgK.XXdFSi9Ftw2O", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-11 10:47:01", last_sign_in_at: "2016-01-11 10:47:01", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: nil, role: nil},
-  {email: "bob@email.com", encrypted_password: "$2a$10$/RTfo2PxySZJi1MBxpm4Ou7GvSy1TSABg7f2heFbcHUHCFdeYQQ4i", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-11 10:48:47", last_sign_in_at: "2016-01-11 10:48:47", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: nil, role: nil},
-  {email: "bill@email.com", encrypted_password: "$2a$10$b1lcj/BvFs78cOGTvxkEDuNjiiogaCfg0C9ZULxgiAuRwvLXSfrKG", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-11 10:57:15", last_sign_in_at: "2016-01-11 10:57:15", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: nil, role: nil},
-  {email: "percy@email.com", encrypted_password: "$2a$10$zh5fK7LQ8aRP5aoiYsIcUekdPnidH9OvfaBdprACVFCr6hb9fNM/O", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-01-11 11:43:04", last_sign_in_at: "2016-01-11 11:03:38", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: "Percy", role: nil},
-  {email: "pete@email.com", encrypted_password: "$2a$10$s4fFbCWSWVt9KS4V1aRIWOP/LVuq3dJdFhcq9YGxhm8nnZT/MuCUa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-12 17:24:15", last_sign_in_at: "2016-01-12 17:24:15", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: "pete", role: nil}
+  {email: "jay@email.com", password: "password", encrypted_password: "$2a$10$2MI2TGQLh0Kx8img3N9XquQqu8jhYCCv8x7OtbbNOWoUXSqybgrA2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 6, current_sign_in_at: "2016-01-12 17:26:38", last_sign_in_at: "2016-01-11 14:17:51", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: "Jay", role: "admin"},
+  {email: "nick@email.com", password: "password", encrypted_password: "$2a$10$LslPVeWHiPv.55dbSevopey84l2AHCbphSGirpgK.XXdFSi9Ftw2O", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-11 10:47:01", last_sign_in_at: "2016-01-11 10:47:01", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: nil, role: nil},
+  {email: "bob@email.com", password: "password", encrypted_password: "$2a$10$/RTfo2PxySZJi1MBxpm4Ou7GvSy1TSABg7f2heFbcHUHCFdeYQQ4i", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-11 10:48:47", last_sign_in_at: "2016-01-11 10:48:47", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: nil, role: nil},
+  {email: "bill@email.com", password: "password", encrypted_password: "$2a$10$b1lcj/BvFs78cOGTvxkEDuNjiiogaCfg0C9ZULxgiAuRwvLXSfrKG", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-11 10:57:15", last_sign_in_at: "2016-01-11 10:57:15", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: nil, role: nil},
+  {email: "percy@email.com", password: "password", encrypted_password: "$2a$10$zh5fK7LQ8aRP5aoiYsIcUekdPnidH9OvfaBdprACVFCr6hb9fNM/O", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-01-11 11:43:04", last_sign_in_at: "2016-01-11 11:03:38", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: "Percy", role: nil},
+  {email: "pete@email.com", password: "password", encrypted_password: "$2a$10$s4fFbCWSWVt9KS4V1aRIWOP/LVuq3dJdFhcq9YGxhm8nnZT/MuCUa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-01-12 17:24:15", last_sign_in_at: "2016-01-12 17:24:15", current_sign_in_ip: "::1", last_sign_in_ip: "::1", name: "pete", role: nil}
 ])
 
 # Booking.delete_all
@@ -29,12 +29,12 @@ Performer.create!([
 Show.delete_all
 
 Show.create!([
-  {name: "Shiny Happy Jihad", image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Shiny_Happy.jpg/220px-Shiny_Happy.jpg", description: "Funny show!", venue_id: 1, performer_id: 2, start_time: "2016-07-11 21:00:00", end_time: "2016-07-11 22:30:00", capacity: nil},
-  {name: "Passive Aggressive", image: "http://images.bwwstatic.com/columnpic6/9545A560-92A7-955A-76E134A6B9E99AE3.jpg", description: "Passive aggressive comedy", venue_id: 1, performer_id: 3, start_time: "2016-07-06 21:00:00", end_time: "2016-07-06 22:30:00", capacity: 20},
-  {name: "Talking Monkeys in Space ", image: "http://ecx.images-amazon.com/images/I/61oIl076-OL.jpg", description: "dasf", venue_id: 1, performer_id: 2, start_time: "2016-07-12 21:00:00", end_time: "2016-07-12 22:30:00", capacity: nil},
-  {name: "Hilarious ", image: "https://upload.wikimedia.org/wikipedia/en/e/e8/Hilarious.jpg", description: "Louis talks about \"Being Single Again\", \"Other People's Kids\"  and his own in this new Hilarious hour", venue_id: 3, performer_id: 4, start_time: "2016-08-05 21:00:00", end_time: "2016-08-05 22:00:00", capacity: 20},
-  {name: "test test", image: "image.jpg", description: "test", venue_id: 1, performer_id: 2, start_time: "2016-02-12 13:30:00", end_time: "2016-02-12 14:30:00", capacity: 20},
-  {name: "test3", image: "", description: "", venue_id: 1, performer_id: 2, start_time: "2016-01-13 13:34:00", end_time: "2016-01-13 15:34:00", capacity: 21}
+  {name: "Shiny Happy Jihad", image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Shiny_Happy.jpg/220px-Shiny_Happy.jpg", description: "Funny show!", venue_id: 1, performer_id: 2, start_time: "2016-07-11 21:00:00", end_time: "2016-07-11 22:30:00", capacity: 400},
+  {name: "Passive Aggressive", image: "http://images.bwwstatic.com/columnpic6/9545A560-92A7-955A-76E134A6B9E99AE3.jpg", description: "Passive aggressive comedy", venue_id: 1, performer_id: 3, start_time: "2016-07-06 21:00:00", end_time: "2016-07-06 22:30:00", capacity: 200},
+  {name: "Talking Monkeys in Space ", image: "http://ecx.images-amazon.com/images/I/61oIl076-OL.jpg", description: "dasf", venue_id: 1, performer_id: 2, start_time: "2016-07-12 21:00:00", end_time: "2016-07-12 22:30:00", capacity: 400},
+  {name: "Hilarious ", image: "https://upload.wikimedia.org/wikipedia/en/e/e8/Hilarious.jpg", description: "Louis talks about \"Being Single Again\", \"Other People's Kids\"  and his own in this new Hilarious hour", venue_id: 3, performer_id: 4, start_time: "2016-08-05 21:00:00", end_time: "2016-08-05 22:00:00", capacity: 200},
+  {name: "test test", image: "image.jpg", description: "test", venue_id: 1, performer_id: 2, start_time: "2016-02-12 13:30:00", end_time: "2016-02-12 14:30:00", capacity: 200},
+
 ])
 
 Venue.delete_all

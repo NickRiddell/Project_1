@@ -28,7 +28,7 @@ class VenuesController < ApplicationController
 
   def update
     load_venue
-    venue.update(venue_params)
+    @venue.update(venue_params)
     redirect_to(venues_path)
   end
 
