@@ -9,14 +9,28 @@ body {
 HEADING
 ********************************************/
 header {
-box-shadow: 0 1px 3px rgba(0,0,0,0.13),0 1px 0 rgba(0,0,0,0.19);
-height: 106px;
+  height: 590px;
+}
+
+#header .header-img {
+  
+  top: 0;
+  width: 100%;
+  margin: 0;
+  background: url(images/header.png) no-repeat;
+  height: auto;
+  left: 0px;
+  margin-left: 0;
 }
 
 nav {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.13),0 1px 0 rgba(0,0,0,0.19);
   background-color: rgb(0, 102, 255);
   height: 106px;
   line-height: 106px;
+  bottom: 0;
+  position: static;
+  margin-top: -4px;
 }
 
 .go-left {

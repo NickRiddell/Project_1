@@ -12,7 +12,7 @@
       <div class="grid grid-6">
         <%= link_to( image_tag(performer.image, alt:"No image", class: "show-img"), performer_path(performer)) %>
       <div class="show-title">
-        <h2><%= link_to("#{performer.name}", performer_path(performer)) %></h2>
+        <h2><%= performer.name %></h2>
         </div>
       </div>
     <% end %>
@@ -24,3 +24,4 @@
 <%=button_to('New Performer', new_performer_path, method: :get)%>
 </div>
 <% end %>
+<br><br>

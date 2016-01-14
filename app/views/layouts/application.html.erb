@@ -8,19 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <header>
-  <nav>
-    <div class="go-left">
-    <div class="logo">
-      <%= link_to(image_tag("logo.png"), shows_path) %>
-    </div>
+  <div id="header">
+    <%= image_tag("header.png", alt:"No image", class: "header-img") %>
+  </div>
+      <nav>
+        <div class="go-left">
+          <div class="logo">
+            <%= link_to(image_tag("logo.png"), shows_path) %>
+          </div>
+        </div>
 
-    </div>
-
-    <div class="go-right">
-      <ul>    
-      <li><%= link_to('Performers', performers_path) %></li>      
-      <li><%= link_to('Venues', venues_path) %></li>
-      <li><%= link_to('Bookings', bookings_path) %></li>  
+        <div class="go-right">
+          <ul>    
+          <li><%= link_to('Performers', performers_path) %></li>      
+          <li><%= link_to('Venues', venues_path) %></li>
+          <li><%= link_to('Bookings', bookings_path) %></li>  
       </ul>
     </div>
   </nav>

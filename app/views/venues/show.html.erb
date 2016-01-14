@@ -1,12 +1,19 @@
-<div>
-  <h1 class="title"><%= @venue.name%></h1>
-</div>
-<div>
-  <%= image_tag(@venue.image, alt:"No image") %>
-</div>
-<div>
-  <%= @venue.description %>
-</div>
+<main class="container">
+  <div class="headline">
+    <h1><%= @venue.name%></h1>
+  </div>
+  <section class="row">
+      <div class="grid grid-6">
+       <div>
+        <%= image_tag(@venue.image, alt:"No image") %>
+      </div>
+    </div>
+    <br><br>
+  <div>
+   <%= @venue.description %>
+  </div>
+</section>
+</main>
 <br><br>
 <% if can? :create, Venue %> 
 <div>

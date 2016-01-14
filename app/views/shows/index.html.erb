@@ -12,7 +12,7 @@
       <div class="grid grid-6">
         <%= link_to( image_tag(show.image, alt:"No image", class: "show-img"), show_path(show)) %>
       <div class="show-title">
-        <h2><%= link_to("#{show.name}", show_path(show)) %></h2>
+        <h2><%= show.name %></h2>
         </div>
       </div>
     <% end %>

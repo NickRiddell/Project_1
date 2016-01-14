@@ -1,12 +1,22 @@
-<h1><%= @booking.show.name %></h1>
-<div>
-  <p><%= @booking.user.name %></p>
-  <br>
-  <p></p>
-  <%= @booking.ticket %>
-
-</div>
-
+<main class="container">
+  <div class="headline">
+  <div>
+    <p><%= @booking.user.name %> has <%= @booking.ticket %> ticket(s) for:<p>
+  </div>
+    <h1><%= @booking.show.name %></h1>
+  </div>
+  <section class="row">
+    <div class="grid grid-6">
+     <div>
+     <%= link_to( image_tag(@booking.show.image, alt:"No image", class: "show-img"), show_path(@booking.show)) %>
+      </div>
+    </div>
+    <br><br>
+  <div>
+    <% %>
+  </div>
+</section>
+</main>
 <br><br>
 <% if can? :manage, :all %> 
 <div>
