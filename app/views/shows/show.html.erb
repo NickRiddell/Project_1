@@ -11,9 +11,11 @@
       <p>no venue</p>
     <% end %>
   </div>
+  <br><br>
   <div>
     <%= @show.description %>
   </div>
+  <br><br>
   <div>
     <% if @show.performer %>
     <%= @show.performer.name%>
@@ -21,12 +23,15 @@
     <p>no performer</p>
       <% end %>
   </div>
+  <br><br>
   <div>
     <%= @show.human_readable_start_date %>
   </div>
+  <br><br>
   <div>
     <%= @show.human_readable_start_time %> - <%= @show.human_readable_end_time %>
   </div>
+  <br><br>
   <div>
     Venue Capacity: <%= @show.capacity %><br>
     Available Tickets: <%= @show.available_spaces%>

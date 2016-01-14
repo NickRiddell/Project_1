@@ -3,6 +3,20 @@ GENERAL
 ********************************************/
 body {
   font-family: 'Open Sans', sans-serif;
+
+}
+
+footer {
+  margin: 40px;
+}
+
+#main {
+  padding-top: -10px;
+  background-color: #F2F2F5;
+}
+
+.login {
+  margin-top: -18px;
 }
 
 /*******************************************

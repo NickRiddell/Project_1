@@ -31,6 +31,7 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
+<div id="main">
 <div class='login'>
   <% if current_user %>
   <%= current_user.name %><%= ", #{current_user.role.capitalize}" if current_user.role %>
@@ -41,7 +42,19 @@
   <% end %>
 </div>
 
+
 <%= yield %>
+</div>
+
+<footer>
+  <h2>Edinburgh Funny Fest Society</h2>
+  <p>316 Gimmick Street</p>
+  <p>Edinburgh EH1 1QS</p>
+  <p>United Kingdom</p>
+
+  <p>+44 (0)131 226 0026</p>
+  <p>&copy; 2015 Nick Riddell.</p>
+</footer>
 
 </body>
 </html>
