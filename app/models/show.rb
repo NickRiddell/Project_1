@@ -3,6 +3,7 @@ class Show < ActiveRecord::Base
   belongs_to :performer
   has_many :bookings, dependent: :destroy
   has_many :users, :through => :bookings
+  has_many :votes, :through => :bookings, dependent: :destroy
   validates :name, presence: true, uniqueness: true
   validates :capacity, presence: true
   validates_presence_of :start_time, :end_time
@@ -26,6 +27,10 @@ class Show < ActiveRecord::Base
 
   def human_readable_end_time
    end_time.strftime('%H:%M')
+  end
+
+  def rating
+    votes.sum(:value)
   end
 
  def tickets_sold
