@@ -14,19 +14,19 @@ class Show < ActiveRecord::Base
 
   def human_readable_start_date
    start_time.strftime('%A, %B %-d %Y')
- end
+  end
 
- def human_readable_start_time
+  def human_readable_start_time
    start_time.strftime('%H:%M')
- end
+  end
 
- def human_readable_end_date
+  def human_readable_end_date
    end_time.strftime('%A, %B %-d %Y')
- end
+  end
 
- def human_readable_end_time
+  def human_readable_end_time
    end_time.strftime('%H:%M')
- end
+  end
 
  def tickets_sold
    s = self.bookings.all.map {|b| b.ticket }
@@ -49,9 +49,8 @@ class Show < ActiveRecord::Base
   Show.venue_schedule(venue_id).any? do |show|
     (new_show.start_time - show.end_time) * (show.start_time - new_show.end_time) >= 0
   end
-end
+  end
 end
 
-  # Return a scope for all interval overlapping the given interval, including the given interval itself
 
 
