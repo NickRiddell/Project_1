@@ -1,10 +1,10 @@
 <%= form_for [@show, @booking] do |f| %>
 
-  <div>
+  <div class="booking-form">
     <%= f.label :ticket %>
     <%= f.number_field :ticket%>
     <%= f.hidden_field :show_id, value: @show.id%>
-  </div>
   <br>
   <%= f.submit "create booking" %>
 <% end %>
+</div>

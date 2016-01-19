@@ -7,20 +7,30 @@
     </div>
   <% end %>
   <br><br>
-  <section class="row">
-  <% @shows.each do |show| %>
-      <div class="grid grid-6">
-        <%= link_to( image_tag(show.image, alt:"No image", class: "show-img"), show_path(show)) %>
-      <div class="show-title">
-        <h2><%= show.name %></h2>
+  <div class="tab-content">
+    <div class="tab-pane">
+      <div class="row show-items-in">
+        <% @shows.each do |show| %>
+          <div class="grid grid-6">
+            <%= link_to( image_tag(show.image, alt:"No image", class: "show-img"), show_path(show)) %>
+            <div class="show-title">
+              <h2><%= show.name %></h2>
+            </div>
+              Show Rating: <%= show.rating %><br>
+              <%= pluralize(show.votes.where(value: 1).count, "upvote") %>
+              <%= pluralize(show.votes.where(value: -1).count, "downvote") %>
+              <br><br>
+            </div>
+          <% end %>
         </div>
-      </div>
-    <% end %>
-  </section>
-</main>
+      </div>      
+    </div>       
+  </div>
+</div>
 <br><br>
 <% if can? :create, Show %> 
 <div>
   <%=button_to('New Show', new_show_path, method: :get)%>
 </div>
 <% end %>
+</main>

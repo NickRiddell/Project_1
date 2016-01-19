@@ -5,7 +5,8 @@ class BookingsController < ApplicationController
     if can? :manage, :all
     @bookings = Booking.all
     else
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = Booking.where(user_id: current_user.
+      id)
     end
   end
 
@@ -21,6 +22,7 @@ class BookingsController < ApplicationController
 
   def show
     load_booking
+    @show = Show.find(@booking.show_id)
   end
 
   def edit
@@ -37,6 +39,18 @@ class BookingsController < ApplicationController
     load_booking
     @booking.destroy
     redirect_to(bookings_path)
+  end
+
+  def upvote
+    load_booking
+    @booking.create_vote(value: 1)
+    redirect_to(shows_path)
+  end
+
+  def downvote
+    load_booking
+    @booking.create_vote(value: -1)
+    redirect_to(shows_path)
   end
 
   private

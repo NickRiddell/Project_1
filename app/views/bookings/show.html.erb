@@ -10,6 +10,11 @@
      <div>
      <%= link_to( image_tag(@booking.show.image, alt:"No image", class: "show-img"), show_path(@booking.show)) %>
       </div>
+      <br>
+      <%= pluralize(@show.votes.count, "vote") %>
+      <%= button_to '+1', upvote_booking_path, method: :post %>
+      <%= button_to '-1', downvote_booking_path, method: :post %>
+      <br>
     </div>
     <br><br>
   <div>

@@ -12,6 +12,7 @@ class Ability
             booking.user == user
         end
         can :create, Booking
+        can :create, Vote
     end
     # Define abilities for the passed in user here. For example:
     #

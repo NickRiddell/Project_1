@@ -1,6 +1,7 @@
 class Show < ActiveRecord::Base
   belongs_to :venue
-  belongs_to :performer
+  has_many :performerships
+  has_many :performers, :through => :performerships
   has_many :bookings, dependent: :destroy
   has_many :users, :through => :bookings
   has_many :votes, :through => :bookings, dependent: :destroy

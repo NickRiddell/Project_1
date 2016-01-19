@@ -10,38 +10,43 @@ footer {
   margin: 40px;
 }
 
-#main {
-  padding-top: -10px;
+.main {
   background-color: #F2F2F5;
 }
 
 .login {
-  margin-top: -18px;
+  margin-left: 10px;
+  color: white;
+}
+
+.login a {
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+  text-decoration: none;
 }
 
 /*******************************************
-HEADING
+HEADER
 ********************************************/
 header {
   height: 590px;
 }
 
-#header .header-img {
+.header-img {
   
   top: 0;
   width: 100%;
-  margin: 0;
   background: url(images/header.png) no-repeat;
   height: auto;
   left: 0px;
-  margin-left: 0;
 }
 
 nav {
   box-shadow: 0 1px 3px rgba(0,0,0,0.13),0 1px 0 rgba(0,0,0,0.19);
   background-color: rgb(0, 102, 255);
-  height: 106px;
-  line-height: 106px;
+  height: 115px;
+  line-height: 115px;
   bottom: 0;
   position: static;
   margin-top: -4px;
@@ -56,16 +61,16 @@ nav {
   float: right;
 }
 
+.logo {
+  max-height: 106px;
+}
+
 .logo a img {
   max-width: 100px;
-  margin: 3px;
+  margin: 8px;
   margin-left: 10px;
   border-radius: 100%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.13),0 1px 0 rgba(0,0,0,0.19);
-}
-
-.login {
-  margin-left: 10px;
 }
 
 .search {
@@ -90,7 +95,6 @@ nav ul li a {
   text-decoration: none;
   border-bottom: 2px solid  rgb(0, 102, 255);
 }
-
 
 nav ul li a:hover {
   border-bottom-color: white;
@@ -168,10 +172,57 @@ nav ul li a:hover {
 .headline{
   font-size: 33px;
   margin-left: -14px;
+  margin-top: -48px;
 }
 .show-img{
   max-width: 400px;
 }
+
+.holder {
+  margin-top: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.14);
+  background: #fff;
+}
+
+.tab-content {
+  overflow: visible;
+  padding: 10px;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.main .tab-pane {
+  display: inline-block;
+}
+
+.show-items-in {
+  padding-bottom: 20px;
+}
+
+/*Devise*/
+.field {
+  padding: 10px;
+}
+
+.log-in {
+  padding: 10px;
+}
+
+.actions {
+  padding: 10px;
+}
+
+/*FORMS*/
+h2 a {
+  text-decoration: none;
+}
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

@@ -15,8 +15,15 @@ Rails.application.routes.draw do
     resources :bookings
   end
   resources :performers
+  resources :bookings do
+    member do
+        post 'upvote'
+      end
+    member do
+        post 'downvote'
+      end
+  end
   resources :venues
-  resources :bookings
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
   

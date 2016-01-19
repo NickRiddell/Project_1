@@ -3,7 +3,8 @@
     <section class="row">
       <% @bookings.each do |booking| %>
         <% if booking.show %>
-          <h1><%= link_to("#{booking.show.name}", booking_path(booking), class: "btn")%></h1>
+          <h2><%= link_to("#{booking.show.name}", booking_path(booking), class: "btn")%></h2>
+          <p>Bookee: <%= booking.user.name %><p>
           <p>Tickets: <%= booking.ticket %></p>
           <p>Date: <%= booking.show.human_readable_start_date %></p>
         <% end %>

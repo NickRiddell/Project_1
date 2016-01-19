@@ -1,5 +1,6 @@
 class Performer < ActiveRecord::Base
-  has_many :shows
+  has_many :performerships 
+  has_many :shows, :through => :performerships
   has_many :venues, :through => :shows
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
