@@ -12,15 +12,19 @@ class ShowsController < ApplicationController
   def new
     @show = Show.new
     @venue = Venue.all
+    @performerships = @show.performerships.build
+    @performer = @performerships.build_performer
   end
 
   def create
       @new_show = Show.new(show_params)
+      binding.pry
       @venue = @new_show.venue
         if Show.overlaps?(@new_show.venue_id, @new_show)
           flash[:alert] = "The venue is already booked for this time slot!"
         else
           @new_show.save
+          @performerships = Performership.create(show_id: @new_show.id, performer_id: p.id)
           concatenate_show
         end
     redirect_to(shows_path)

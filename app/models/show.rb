@@ -5,6 +5,9 @@ class Show < ActiveRecord::Base
   has_many :bookings, dependent: :destroy
   has_many :users, :through => :bookings
   has_many :votes, :through => :bookings, dependent: :destroy
+
+  accepts_nested_attributes_for :performers
+
   validates :name, presence: true, uniqueness: true
   validates :capacity, presence: true
   validates_presence_of :start_time, :end_time
@@ -54,9 +57,6 @@ class Show < ActiveRecord::Base
  def self.overlaps?(venue_id, new_show)
   Show.venue_schedule(venue_id).any? do |show|
     (new_show.start_time - show.end_time) * (show.start_time - new_show.end_time) >= 0
-  end
+    end
   end
 end
-
-
-

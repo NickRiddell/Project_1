@@ -17,11 +17,9 @@
   </div>
   <br><br>
   <div>
-    <% if @show.performer %>
-    <%= @show.performer.name%>
-      <% else %>
-    <p>no performer</p>
-      <% end %>
+  <% @show.performerships.each do |p| %>
+  <%= p.performer.name%>
+  <% end %>
   </div>
   <br><br>
   <div>

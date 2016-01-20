@@ -16,9 +16,19 @@
 </div>
 <br>
 <div>
-<%= f.label :performer_id, "Comedian" %><br>
-<%= f.select :performer_id, Performer.all.map {|v| [v.name, v.id] } %>
+<% counter = 1 %>
+<% 4.times do %>
+  <%= f.fields_for :performerships do |builder| %>
+    <p>
+      <%= builder.label :performer_id, "Comedian" %><br>
+      <%= builder.select "performer_id#{counter}", Performer.all.collect {|p| [p.name, p.id] }, :prompt => "Please select" %> 
+    </p>
+    <% counter += counter %>
+  <% end %>
+  <% end %>
+
 </div>
+
 <br>
 <div>
   <%= f.label :venue_id %><br>
