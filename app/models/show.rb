@@ -54,9 +54,10 @@ class Show < ActiveRecord::Base
    where(venue_id:v_id)
  end
 
- def self.overlaps?(venue_id, new_show)
-  Show.venue_schedule(venue_id).any? do |show|
-    (new_show.start_time - show.end_time) * (show.start_time - new_show.end_time) >= 0
+ def self.overlaps?(venue_id, show)
+  Show.venue_schedule(venue_id).any? do |s|
+    (show.start_time - s.end_time) * (s.start_time - show.end_time) >= 0
     end
   end
+
 end

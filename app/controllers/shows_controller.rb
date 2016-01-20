@@ -12,21 +12,21 @@ class ShowsController < ApplicationController
   def new
     @show = Show.new
     @venue = Venue.all
-    @performerships = @show.performerships.build
-    @performer = @performerships.build_performer
+    # @performerships = @show.performerships.build
+    # @performer = @performerships.build_performer
   end
 
   def create
-      @new_show = Show.new(show_params)
-      binding.pry
-      @venue = @new_show.venue
-        if Show.overlaps?(@new_show.venue_id, @new_show)
-          flash[:alert] = "The venue is already booked for this time slot!"
-        else
-          @new_show.save
-          @performerships = Performership.create(show_id: @new_show.id, performer_id: p.id)
-          concatenate_show
-        end
+    @show = Show.new(show_params)
+    @venue = @show.venue
+      if Show.overlaps?(@show.venue_id, @show)
+        flash[:alert] = "The venue is already booked for this time slot!"
+      else
+    @show.performer_ids.each do |p|
+    Performership.create(show_id: @show.id, performer_id: p)
+      end
+    concatenate_show
+      end
     redirect_to(shows_path)
   end
 
@@ -60,7 +60,7 @@ class ShowsController < ApplicationController
 
   private
   def show_params
-    params.require(:show).permit(:name, :image, :description, :venue_id, :performer_id, :start_time, :end_time, :capacity)
+    params.require(:show).permit(:name, :image, :description, :venue_id, :performer_id, :start_time, :end_time, :capacity, :performer_ids => [])
   end
 
   def load_show

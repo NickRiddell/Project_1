@@ -16,15 +16,9 @@
 </div>
 <br>
 <div>
-<% counter = 1 %>
-<% 4.times do %>
-  <%= f.fields_for :performerships do |builder| %>
-    <p>
-      <%= builder.label :performer_id, "Comedian" %><br>
-      <%= builder.select "performer_id#{counter}", Performer.all.collect {|p| [p.name, p.id] }, :prompt => "Please select" %> 
-    </p>
-    <% counter += counter %>
-  <% end %>
+  <%= f.collection_check_boxes :performer_ids, Performer.all, :id, :name do |b| %>
+     <%= b.label { b.check_box } %>
+     <%= b.text  %>
   <% end %>
 
 </div>
