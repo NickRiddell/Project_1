@@ -7,6 +7,10 @@
      <div>
       <%= image_tag(@performer.image, alt:"No image") %>
       </div>
+
+      <div>
+        <%= video_tag(["#{@performer.id}.webm", "#{@performer.id}.ogv"], size: "640x360", controls: true) %>
+      </div>
     </div>
     <br><br>
   <div>

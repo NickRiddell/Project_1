@@ -5,6 +5,9 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( normalize.css )
 Rails.application.config.assets.precompile += %w( header.png )
 Rails.application.config.assets.precompile += %w( normalize.css )
+Rails.application.config.assets.precompile += %w( 14.webm )
+Rails.application.config.assets.precompile += %w( 14.ogv )
+Rails.application.config.assets.precompile += %w( 15.webm )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

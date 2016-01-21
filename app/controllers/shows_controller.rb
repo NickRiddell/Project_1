@@ -22,10 +22,10 @@ class ShowsController < ApplicationController
       if Show.overlaps?(@show.venue_id, @show)
         flash[:alert] = "The venue is already booked for this time slot!"
       else
-    @show.performer_ids.each do |p|
-    Performership.create(show_id: @show.id, performer_id: p)
+        @show.performer_ids.each do |p|
+        Performership.create(show_id: @show.id, performer_id: p)
       end
-    concatenate_show
+        concatenate_show
       end
     redirect_to(shows_path)
   end
